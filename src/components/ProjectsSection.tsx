@@ -1,9 +1,9 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 type Project = {
   id: number;
@@ -15,10 +15,12 @@ type Project = {
   image: string;
   tags: string[];
   url: string;
+  github?: string;
 };
 
 const ProjectsSection: React.FC = () => {
   const { t, language } = useLanguage();
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   const projects: Project[] = [
     {
@@ -31,6 +33,7 @@ const ProjectsSection: React.FC = () => {
       image: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?q=80&w=1974',
       tags: ['React', 'Node.js', 'MongoDB'],
       url: '#',
+      github: 'https://github.com',
     },
     {
       id: 2,
@@ -53,46 +56,68 @@ const ProjectsSection: React.FC = () => {
       image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1974',
       tags: ['Vue.js', 'Firebase', 'Tailwind CSS'],
       url: '#',
+      github: 'https://github.com',
     },
   ];
 
   return (
-    <section id="projects" className="py-20 bg-black">
+    <section id="projects" className="py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+        <div className="mb-16">
+          <div className="inline-flex items-center mb-4">
+            <span className="h-px w-8 bg-red-600 mr-3"></span>
+            <h2 className="text-red-600 uppercase tracking-wider text-sm font-mono">
+              {t('projects.subtitle')}
+            </h2>
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-2 font-mono">
             {t('projects.title')}
           </h2>
-          <div className="h-1 w-20 bg-red-600 mx-auto mb-8"></div>
         </div>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project) => (
-            <Card key={project.id} className="bg-gray-900 border-red-600/20 overflow-hidden hover:border-red-600/60 transition-all">
-              <div className="h-48 overflow-hidden">
+            <Card 
+              key={project.id} 
+              className="bg-transparent border border-red-600/20 overflow-hidden group hover:border-red-600/60 transition-all rounded-2xl"
+              onMouseEnter={() => setHoveredId(project.id)}
+              onMouseLeave={() => setHoveredId(null)}
+            >
+              <div className="h-64 overflow-hidden relative">
+                <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 z-10 opacity-100 group-hover:opacity-90 transition-opacity`}></div>
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  className={`w-full h-full object-cover transition-all duration-500 ${hoveredId === project.id ? 'scale-110 blur-sm' : 'scale-100'}`}
                 />
+                <div className={`absolute inset-0 flex items-center justify-center z-20 opacity-0 ${hoveredId === project.id ? 'opacity-100' : ''} transition-opacity duration-300`}>
+                  <div className="flex space-x-4">
+                    <Button variant="outline" size="icon" className="bg-black/50 border-white/20 text-white hover:bg-red-600 hover:text-white rounded-full" asChild>
+                      <a href={project.url} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-5 w-5" />
+                      </a>
+                    </Button>
+                    {project.github && (
+                      <Button variant="outline" size="icon" className="bg-black/50 border-white/20 text-white hover:bg-red-600 hover:text-white rounded-full" asChild>
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-5 w-5" />
+                        </a>
+                      </Button>
+                    )}
+                  </div>
+                </div>
               </div>
               <CardContent className="pt-6">
-                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4">{project.description[language]}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <h3 className="text-xl font-bold text-white mb-2 font-mono">{project.title}</h3>
+                <p className="text-gray-400 mb-4 line-clamp-3">{project.description[language]}</p>
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, index) => (
-                    <span key={index} className="bg-red-600/10 text-red-500 text-xs px-2 py-1 rounded-full">
+                    <span key={index} className="bg-red-600/10 text-red-500 text-xs px-3 py-1 rounded-full font-mono">
                       {tag}
                     </span>
                   ))}
                 </div>
               </CardContent>
-              <CardFooter>
-                <Button variant="outline" className="w-full border-red-600/40 text-red-500 hover:bg-red-600 hover:text-white" asChild>
-                  <a href={project.url} target="_blank" rel="noopener noreferrer">
-                    {t('projects.viewProject')} <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </CardFooter>
             </Card>
           ))}
         </div>

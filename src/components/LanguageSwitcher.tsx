@@ -13,14 +13,14 @@ const LanguageSwitcher: React.FC = () => {
 
   return (
     <Button 
-      variant="ghost" 
-      size="icon" 
+      variant="outline" 
+      size="sm" 
       onClick={toggleLanguage} 
-      className="rounded-full"
+      className="rounded-full border-red-600/20 hover:bg-red-600/10 hover:border-red-600/40 text-gray-400 hover:text-white"
       aria-label={language === 'pt' ? 'Switch to English' : 'Mudar para Português'}
     >
-      <Globe className="h-5 w-5" />
-      <span className="ml-2 text-xs font-bold">{language === 'pt' ? 'EN' : 'PT'}</span>
+      <Globe className="h-4 w-4 mr-2 text-red-600" />
+      <span className="text-xs font-mono uppercase tracking-wider">{language === 'pt' ? 'EN' : 'PT'}</span>
     </Button>
   );
 };

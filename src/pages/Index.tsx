@@ -12,14 +12,16 @@ import Footer from '@/components/Footer';
 const Index = () => {
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-black text-white font-mono">
         <Navbar />
-        <HeroSection />
-        <AboutSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <ContactSection />
-        <Footer />
+        <div className="max-w-7xl mx-auto">
+          <HeroSection />
+          <AboutSection />
+          <ProjectsSection />
+          <SkillsSection />
+          <ContactSection />
+          <Footer />
+        </div>
       </div>
     </LanguageProvider>
   );
