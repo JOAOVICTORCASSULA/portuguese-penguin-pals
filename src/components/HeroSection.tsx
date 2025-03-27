@@ -61,7 +61,7 @@ const HeroSection: React.FC = () => {
               {t('hero.welcome')}
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-mono font-bold text-white leading-tight">
-              <span className="block">João Billo</span>
+              <span className="block mb-4">João Billo</span>
               <div className="h-16 flex items-center">
                 <span className="text-red-600 flex items-center font-normal">
                   &lt;{typedText}<span className="animate-pulse">|</span>&gt;

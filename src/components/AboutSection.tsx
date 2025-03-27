@@ -19,13 +19,41 @@ const AboutSection: React.FC = () => {
             {t('about.title')}
           </h2>
         </div>
-        <div className="max-w-3xl">
-          <p className="text-gray-300 text-lg leading-relaxed mb-8">
+        <div className="max-w-3xl space-y-6">
+          <p className="text-gray-300 text-lg leading-relaxed">
             {t('about.description')}
           </p>
           <p className="text-gray-300 text-lg leading-relaxed">
             {t('about.additional')}
           </p>
+          <div className="border-l-2 border-red-600 pl-6 my-8">
+            <p className="text-gray-300 text-lg italic">
+              {t('about.quote')}
+            </p>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-white text-xl font-bold font-mono">{t('about.experience.title')}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-5 border border-red-600/20 rounded-xl bg-black/30 backdrop-blur-sm">
+                <h4 className="text-white font-bold text-lg">2020 - {t('about.present')}</h4>
+                <p className="text-red-500 font-mono">{t('about.experience.job1.title')}</p>
+                <p className="text-gray-400 mt-2">{t('about.experience.job1.description')}</p>
+              </div>
+              <div className="p-5 border border-red-600/20 rounded-xl bg-black/30 backdrop-blur-sm">
+                <h4 className="text-white font-bold text-lg">2018 - 2020</h4>
+                <p className="text-red-500 font-mono">{t('about.experience.job2.title')}</p>
+                <p className="text-gray-400 mt-2">{t('about.experience.job2.description')}</p>
+              </div>
+            </div>
+          </div>
+          <div className="space-y-4 mt-8">
+            <h3 className="text-white text-xl font-bold font-mono">{t('about.education.title')}</h3>
+            <div className="p-5 border border-red-600/20 rounded-xl bg-black/30 backdrop-blur-sm">
+              <h4 className="text-white font-bold text-lg">2014 - 2018</h4>
+              <p className="text-red-500 font-mono">{t('about.education.degree')}</p>
+              <p className="text-gray-400 mt-2">{t('about.education.school')}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

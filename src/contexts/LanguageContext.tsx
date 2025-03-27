@@ -34,31 +34,91 @@ const translations: Translations = {
     en: 'Contact',
   },
   // Seção Hero
-  'hero.title': {
-    pt: 'Olá, eu sou',
-    en: 'Hello, I am',
+  'hero.welcome': {
+    pt: 'Bem-vindo ao meu portfólio',
+    en: 'Welcome to my portfolio',
   },
   'hero.subtitle': {
-    pt: 'Desenvolvedor Web',
-    en: 'Web Developer',
+    pt: 'Desenvolvedor Web focado em criar experiências digitais excepcionais',
+    en: 'Web Developer focused on creating exceptional digital experiences',
   },
   'hero.cta': {
     pt: 'Conheça meu trabalho',
     en: 'See my work',
   },
+  'hero.contact': {
+    pt: 'Contato',
+    en: 'Contact',
+  },
   // Seção Sobre
+  'about.subtitle': {
+    pt: 'Quem sou eu',
+    en: 'Who I am',
+  },
   'about.title': {
     pt: 'Sobre Mim',
     en: 'About Me',
   },
   'about.description': {
-    pt: 'Sou um desenvolvedor apaixonado por criar soluções web inovadoras e funcionais. Com experiência em diversas tecnologias modernas, busco sempre entregar projetos de alta qualidade.',
-    en: 'I am a developer passionate about creating innovative and functional web solutions. With experience in various modern technologies, I always seek to deliver high-quality projects.',
+    pt: 'Sou um desenvolvedor apaixonado por criar soluções web inovadoras e funcionais. Com experiência em diversas tecnologias modernas, busco sempre entregar projetos de alta qualidade que atendam às necessidades do cliente e proporcionem uma experiência excepcional ao usuário.',
+    en: 'I am a developer passionate about creating innovative and functional web solutions. With experience in various modern technologies, I always seek to deliver high-quality projects that meet client needs and provide an exceptional user experience.',
+  },
+  'about.additional': {
+    pt: 'Minha abordagem combina pensamento criativo com métodos ágeis para resolver problemas complexos de forma eficiente. Estou sempre aprendendo e me adaptando às novas tendências e tecnologias para oferecer as melhores soluções possíveis.',
+    en: 'My approach combines creative thinking with agile methods to efficiently solve complex problems. I am always learning and adapting to new trends and technologies to offer the best possible solutions.',
+  },
+  'about.quote': {
+    pt: '"A simplicidade é o mais alto nível de sofisticação. Acredito que o melhor código é aquele que resolve problemas de forma clara e direta."',
+    en: '"Simplicity is the ultimate sophistication. I believe that the best code is one that solves problems in a clear and straightforward way."',
+  },
+  'about.present': {
+    pt: 'Presente',
+    en: 'Present',
+  },
+  'about.experience.title': {
+    pt: 'Experiência Profissional',
+    en: 'Professional Experience',
+  },
+  'about.experience.job1.title': {
+    pt: 'Desenvolvedor Frontend Sênior',
+    en: 'Senior Frontend Developer',
+  },
+  'about.experience.job1.description': {
+    pt: 'Desenvolvimento de aplicações web com React, TypeScript e Tailwind CSS. Liderança de equipe e implementação de melhores práticas.',
+    en: 'Development of web applications with React, TypeScript and Tailwind CSS. Team leadership and implementation of best practices.',
+  },
+  'about.experience.job2.title': {
+    pt: 'Desenvolvedor Web',
+    en: 'Web Developer',
+  },
+  'about.experience.job2.description': {
+    pt: 'Criação de sites responsivos e aplicações interativas usando HTML, CSS, JavaScript e frameworks modernos.',
+    en: 'Creation of responsive websites and interactive applications using HTML, CSS, JavaScript and modern frameworks.',
+  },
+  'about.education.title': {
+    pt: 'Educação',
+    en: 'Education',
+  },
+  'about.education.degree': {
+    pt: 'Bacharelado em Ciência da Computação',
+    en: 'Bachelor of Computer Science',
+  },
+  'about.education.school': {
+    pt: 'Universidade Federal do Brasil',
+    en: 'Federal University of Brazil',
   },
   // Seção Projetos
+  'projects.subtitle': {
+    pt: 'Onde encontrar meu trabalho',
+    en: 'Where to find my work',
+  },
   'projects.title': {
-    pt: 'Meus Projetos',
-    en: 'My Projects',
+    pt: 'Minhas Plataformas',
+    en: 'My Platforms',
+  },
+  'projects.description': {
+    pt: 'Confira minhas plataformas e redes sociais onde compartilho meus projetos, código e conteúdo relacionado ao desenvolvimento.',
+    en: 'Check out my platforms and social networks where I share my projects, code and content related to development.',
   },
   'projects.viewProject': {
     pt: 'Ver Projeto',
