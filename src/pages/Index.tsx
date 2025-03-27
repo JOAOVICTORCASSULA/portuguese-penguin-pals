@@ -4,7 +4,6 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
-import ProjectsSection from '@/components/ProjectsSection';
 import SkillsSection from '@/components/SkillsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -17,7 +16,6 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <HeroSection />
           <AboutSection />
-          <ProjectsSection />
           <SkillsSection />
           <ContactSection />
           <Footer />
